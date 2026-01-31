@@ -2,7 +2,6 @@ package dosw.bitacora.semana1.streams;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Ejercicio4MayoresEdad {
     
@@ -15,11 +14,9 @@ public class Ejercicio4MayoresEdad {
             new Usuario(5, "pedro", 15, false)
         );
         
-        List<String> nombresMayores = usuarios.stream()
+        usuarios.stream()
                 .filter(u -> u.getAge() >= 18)
                 .map(Usuario::getName)
-                .collect(Collectors.toList());
-        
-        System.out.println("Mayores de edad: " + nombresMayores);
+                .forEach(System.out::println);
     }
 }

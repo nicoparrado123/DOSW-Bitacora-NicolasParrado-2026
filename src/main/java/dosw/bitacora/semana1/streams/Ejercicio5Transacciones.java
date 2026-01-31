@@ -14,11 +14,9 @@ public class Ejercicio5Transacciones {
             new Transaction("T005", 1000.0, true)
         );
         
-        boolean hayNoAprobadas = transacciones.stream()
+        boolean loteValido = !transacciones.stream()
                 .peek(t -> System.out.println("Procesando: " + t))
                 .anyMatch(t -> !t.isApproved());
-        
-        boolean loteValido = !hayNoAprobadas;
         
         System.out.println("\nLote valido: " + loteValido);
     }

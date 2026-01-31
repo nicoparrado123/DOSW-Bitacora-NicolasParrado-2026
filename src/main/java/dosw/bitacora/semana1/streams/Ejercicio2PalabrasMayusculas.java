@@ -8,13 +8,10 @@ public class Ejercicio2PalabrasMayusculas {
     public static void main(String[] args) {
         List<String> palabras = Arrays.asList("hola", "mundo", "java", "streams", "programacion", "code");
         
-        long cantidad = palabras.stream()
+        palabras.stream()
                 .filter(p -> p.length() > 4)
                 .map(String::toUpperCase)
                 .sorted()
-                .peek(System.out::println)
-                .count();
-        
-        System.out.println("Cantidad total: " + cantidad);
+                .forEach(System.out::println);
     }
 }
