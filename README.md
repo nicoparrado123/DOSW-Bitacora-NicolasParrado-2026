@@ -2,7 +2,7 @@
 
 Bitácora técnica del curso DOSW. Este repositorio documenta el progreso semanal, ejercicios prácticos y autoevaluaciones del proceso de aprendizaje.
 
-## 📋 Estructura del Proyecto
+## Estructura del Proyecto
 
 Este es un proyecto Maven organizado por semanas:
 
@@ -19,17 +19,17 @@ src/main/java/dosw/bitacora/
     └── README.md
 ```
 
-## 🎯 Objetivo
+## Objetivo
 
 Reforzar conceptos técnicos mediante práctica constante y documentación del proceso de aprendizaje, desarrollando la capacidad de aplicar, razonar y codificar soluciones de forma consistente.
 
-## 📚 Contenido por Semana
+## Contenido por Semana
 
 - **[Semana 1](src/main/java/dosw/bitacora/semana1/)**: Streams en Java
 - **[Semana 2](src/main/java/dosw/bitacora/semana2/)**: SOLID y Patrones de Diseño
 - **[Semana 3](src/main/java/dosw/bitacora/semana3/)**: [Por definir]
 
-## 🔄 Metodología GitFlow
+## Metodología GitFlow
 
 Cada semana se trabaja en una rama feature independiente:
 - `feature/semana-1`
@@ -38,7 +38,7 @@ Cada semana se trabaja en una rama feature independiente:
 
 Las features se mezclan en `develop` al finalizar cada semana.
 
-## 🚀 Cómo ejecutar
+## Cómo ejecutar
 
 ```bash
 # Compilar el proyecto
@@ -48,7 +48,7 @@ mvn compile
 mvn exec:java -Dexec.mainClass="dosw.bitacora.semana1.streams.EjemploStreams"
 ```
 
-## 📝 Autoevaluación
+## Autoevaluación
 
 Cada semana incluye una autoevaluación en su README con:
 - ¿Qué entendía mal antes?
