@@ -65,18 +65,20 @@ Aprendizajes:
 Autoevaluacion Semanal
 
 Que entendia mal antes?
-- Al principio pensaba que los streams modificaban la lista original, pero en realidad crean un nuevo flujo de datos sin alterar la fuente.
-- Confundia cuando usar map y cuando usar filter. Ahora entiendo que filter es para seleccionar elementos y map es para transformarlos.
-- No entendia bien para que servia peek, pensaba que era lo mismo que forEach.
+- Pensaba que tenia que usar un for para recorrer listas, no sabia que los streams hacian eso automaticamente.
+- Creia que filter y map eran lo mismo, me confundia cual usar.
+- No entendia por que a veces usaba collect y otras veces forEach.
+- Pensaba que el :: era un error de sintaxis, no sabia que era para referenciar metodos.
 
 Que entiendo ahora?
-- Los streams son una forma declarativa de procesar colecciones, mas legible que los bucles tradicionales.
-- Puedo encadenar multiples operaciones intermedias (filter, map, sorted) y terminar con una operacion terminal (collect, count, anyMatch).
-- peek es util para debugging porque me permite ver los elementos sin consumir el stream.
-- anyMatch es perfecto para validaciones, retorna true si al menos un elemento cumple la condicion.
+- Los streams son como una cadena de pasos que se aplican a cada elemento de la lista.
+- filter es para quedarse solo con algunos elementos, map es para cambiarlos.
+- forEach es para imprimir o hacer algo con cada elemento al final.
+- anyMatch sirve para preguntar si al menos uno cumple una condicion.
+- peek es como un System.out.println en medio del stream para ver que esta pasando.
 
 Que me falta reforzar?
-- Practicar mas con flatMap para trabajar con listas anidadas.
-- Entender mejor las diferencias entre anyMatch, allMatch y noneMatch.
-- Mejorar en el uso de Collectors mas avanzados como groupingBy y partitioningBy.
-- Practicar mas con streams de objetos complejos y multiples filtros.
+- Practicar mas con objetos como Usuario y Transaction, todavia me cuesta un poco.
+- Entender mejor cuando usar collect y cuando usar forEach.
+- Aprender mas operaciones como allMatch y noneMatch.
+- Practicar combinando varios filtros y maps juntos.
