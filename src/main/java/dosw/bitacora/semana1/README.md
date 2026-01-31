@@ -1,47 +1,47 @@
-# Semana 1 - Streams en Java
+Semana 1 - Streams en Java
 
-## Ejercicios realizados
+Ejercicios realizados
 
-### Ejercicio 1: [Nombre del ejercicio]
-**Descripción:** [Breve descripción del ejercicio]
+Ejercicio 1: [Nombre del ejercicio]
+Descripcion: [Breve descripcion del ejercicio]
 
-**Código:** Ver `streams/Ejercicio1.java`
+Codigo: Ver streams/Ejercicio1.java
 
-**Aprendizajes:**
+Aprendizajes:
 - [Punto clave 1]
 - [Punto clave 2]
 
 ---
 
-### Ejercicio 2: [Nombre del ejercicio]
-**Descripción:** [Breve descripción del ejercicio]
+Ejercicio 2: [Nombre del ejercicio]
+Descripcion: [Breve descripcion del ejercicio]
 
-**Código:** Ver `streams/Ejercicio2.java`
+Codigo: Ver streams/Ejercicio2.java
 
-**Aprendizajes:**
+Aprendizajes:
 - [Punto clave 1]
 - [Punto clave 2]
 
 ---
 
-### Ejercicio 3: [Nombre del ejercicio]
-**Descripción:** [Breve descripción del ejercicio]
+Ejercicio 3: [Nombre del ejercicio]
+Descripcion: [Breve descripcion del ejercicio]
 
-**Código:** Ver `streams/Ejercicio3.java`
+Codigo: Ver streams/Ejercicio3.java
 
-**Aprendizajes:**
+Aprendizajes:
 - [Punto clave 1]
 - [Punto clave 2]
 
 ---
 
-## Autoevaluación Semanal
+Autoevaluacion Semanal
 
-### ¿Qué entendía mal antes?
-- [Escribe aquí tus conceptos erróneos previos]
+Que entendia mal antes?
+- [Escribe aqui tus conceptos erroneos previos]
 
-### ¿Qué entiendo ahora?
-- [Escribe aquí lo que has comprendido esta semana]
+Que entiendo ahora?
+- [Escribe aqui lo que has comprendido esta semana]
 
-### ¿Qué me falta reforzar?
-- [Escribe aquí los temas que necesitas practicar más]
+Que me falta reforzar?
+- [Escribe aqui los temas que necesitas practicar mas]

@@ -1,40 +1,40 @@
-# Semana 2 - SOLID y Patrones de Diseño
+Semana 2 - SOLID y Patrones de Diseno
 
-## Ejercicios realizados
+Ejercicios realizados
 
-### SOLID
+SOLID
 
-#### Ejercicio 1: [Principio aplicado]
-**Descripción:** [Breve descripción del ejercicio]
+Ejercicio 1: [Principio aplicado]
+Descripcion: [Breve descripcion del ejercicio]
 
-**Código:** Ver `solid/`
+Codigo: Ver solid/
 
-**Aprendizajes:**
+Aprendizajes:
 - [Punto clave 1]
 - [Punto clave 2]
 
 ---
 
-### Patrones de Diseño
+Patrones de Diseno
 
-#### Ejercicio 1: [Patrón aplicado]
-**Descripción:** [Breve descripción del ejercicio]
+Ejercicio 1: [Patron aplicado]
+Descripcion: [Breve descripcion del ejercicio]
 
-**Código:** Ver `patrones/`
+Codigo: Ver patrones/
 
-**Aprendizajes:**
+Aprendizajes:
 - [Punto clave 1]
 - [Punto clave 2]
 
 ---
 
-## Autoevaluación Semanal
+Autoevaluacion Semanal
 
-### ¿Qué entendía mal antes?
-- [Escribe aquí tus conceptos erróneos previos]
+Que entendia mal antes?
+- [Escribe aqui tus conceptos erroneos previos]
 
-### ¿Qué entiendo ahora?
-- [Escribe aquí lo que has comprendido esta semana]
+Que entiendo ahora?
+- [Escribe aqui lo que has comprendido esta semana]
 
-### ¿Qué me falta reforzar?
-- [Escribe aquí los temas que necesitas practicar más]
+Que me falta reforzar?
+- [Escribe aqui los temas que necesitas practicar mas]
