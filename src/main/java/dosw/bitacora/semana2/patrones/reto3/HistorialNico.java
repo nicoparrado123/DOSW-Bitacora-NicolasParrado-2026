@@ -7,7 +7,7 @@ public class HistorialNico {
     
     private List<TextoMemento> estados;
     
-    public Historial() {
+    public HistorialNico() {
         this.estados = new ArrayList<>();
     }
     
