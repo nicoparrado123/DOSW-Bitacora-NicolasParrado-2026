@@ -1,4 +1,4 @@
-package dosw.bitacora.semana2.patrones;
+package dosw.bitacora.semana2.patrones.reto2;
 
 public class ImpresoraDetallada {
     

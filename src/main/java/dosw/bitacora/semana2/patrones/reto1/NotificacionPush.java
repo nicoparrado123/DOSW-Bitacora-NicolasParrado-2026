@@ -1,4 +1,4 @@
-package dosw.bitacora.semana2.patrones;
+package dosw.bitacora.semana2.patrones.reto1;
 
 public class NotificacionPush implements Notificacion {
     @Override
