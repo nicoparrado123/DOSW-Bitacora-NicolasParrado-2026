@@ -2,9 +2,9 @@ package dosw.bitacora.semana2.patrones.reto2;
 
 public class ImpresoraSimpleAdapter implements Impresora {
     
-    private ImpresoraSimple impresoraSimple;
+    private PrintSimple impresoraSimple;
     
-    public ImpresoraSimpleAdapter(ImpresoraSimple impresoraSimple) {
+    public ImpresoraSimpleAdapter(PrintSimple impresoraSimple) {
         this.impresoraSimple = impresoraSimple;
     }
     

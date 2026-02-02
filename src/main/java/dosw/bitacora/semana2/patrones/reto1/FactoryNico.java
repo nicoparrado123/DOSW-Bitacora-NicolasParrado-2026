@@ -1,8 +1,8 @@
 package dosw.bitacora.semana2.patrones.reto1;
 
-public class NotificacionFactory {
+public class FactoryNico {
     
-    public static Notificacion crearNotificacion(String tipo) {
+    public static Notificacion crear(String tipo) {
         switch (tipo.toLowerCase()) {
             case "email":
                 return new NotificacionEmail();
@@ -11,7 +11,7 @@ public class NotificacionFactory {
             case "push":
                 return new NotificacionPush();
             default:
-                throw new IllegalArgumentException("Tipo de notificacion no valido: " + tipo);
+                throw new IllegalArgumentException("Tipo no valido: " + tipo);
         }
     }
 }

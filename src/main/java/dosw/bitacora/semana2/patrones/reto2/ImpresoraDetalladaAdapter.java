@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class ImpresoraDetalladaAdapter implements Impresora {
     
-    private ImpresoraDetallada impresoraDetallada;
+    private PrintDetalle impresoraDetallada;
     private String autor;
     
-    public ImpresoraDetalladaAdapter(ImpresoraDetallada impresoraDetallada, String autor) {
+    public ImpresoraDetalladaAdapter(PrintDetalle impresoraDetallada, String autor) {
         this.impresoraDetallada = impresoraDetallada;
         this.autor = autor;
     }

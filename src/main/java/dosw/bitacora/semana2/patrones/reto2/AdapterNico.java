@@ -1,12 +1,12 @@
 package dosw.bitacora.semana2.patrones.reto2;
 
-public class EjemploAdapter {
+public class AdapterNico {
     
     public static void main(String[] args) {
-        ImpresoraSimple simple = new ImpresoraSimple();
+        PrintSimple simple = new PrintSimple();
         Impresora impresora1 = new ImpresoraSimpleAdapter(simple);
         
-        ImpresoraDetallada detallada = new ImpresoraDetallada();
+        PrintDetalle detallada = new PrintDetalle();
         Impresora impresora2 = new ImpresoraDetalladaAdapter(detallada, "Nicolas Parrado");
         
         System.out.println("=== Usando impresora simple ===");

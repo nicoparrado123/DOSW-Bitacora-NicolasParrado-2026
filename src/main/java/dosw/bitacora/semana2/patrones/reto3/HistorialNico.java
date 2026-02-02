@@ -3,7 +3,7 @@ package dosw.bitacora.semana2.patrones.reto3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Historial {
+public class HistorialNico {
     
     private List<TextoMemento> estados;
     

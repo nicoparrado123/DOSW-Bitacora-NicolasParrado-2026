@@ -1,10 +1,10 @@
 package dosw.bitacora.semana2.patrones.reto3;
 
-public class EjemploMemento {
+public class MementoNico {
     
     public static void main(String[] args) {
         Editor editor = new Editor();
-        Historial historial = new Historial();
+        HistorialNico historial = new HistorialNico();
         
         editor.escribir("Version 1");
         historial.agregar(editor.guardar());
