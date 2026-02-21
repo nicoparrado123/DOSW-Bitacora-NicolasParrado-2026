@@ -172,7 +172,8 @@ Entras a la pagina de la Escuela, buscas la parte de admisiones, escoges la carr
 ---
 
 ## Diagrama de Casos de Uso
-Ver archivo: `diagrama-casos-uso.png`
+
+![Diagrama de Casos de Uso](diagrama-casos-uso.png)
 
 ---
 
