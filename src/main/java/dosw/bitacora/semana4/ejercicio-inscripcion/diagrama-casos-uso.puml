@@ -1,0 +1,65 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Aspirante" as aspirante
+actor "Sistema de Correo" as correo
+
+rectangle "Sistema de Inscripciones - Escuela Colombiana de Ingeniería" {
+  
+  package "Gestión de Inscripción" {
+    usecase "Llenar Formulario\nde Inscripción" as UC1
+    usecase "Validar Datos\nPersonales" as UC2
+    usecase "Verificar Correo\nNo Duplicado" as UC3
+    usecase "Verificar Documento\nNo Duplicado" as UC4
+    usecase "Generar Número\nde Inscripción" as UC5
+    usecase "Guardar Inscripción" as UC6
+  }
+  
+  package "Notificaciones" {
+    usecase "Enviar Correo\nde Confirmación" as UC7
+    usecase "Descargar\nComprobante PDF" as UC8
+  }
+  
+  package "Consultas" {
+    usecase "Consultar Estado\nde Inscripción" as UC9
+    usecase "Recuperar Número\nde Inscripción" as UC10
+  }
+  
+  package "Manejo de Errores" {
+    usecase "Mostrar Campos\ncon Error" as UC11
+    usecase "Guardar Borrador" as UC12
+  }
+}
+
+aspirante --> UC1
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC1 ..> UC5 : <<include>>
+UC1 ..> UC6 : <<include>>
+UC1 ..> UC7 : <<include>>
+
+aspirante --> UC8
+aspirante --> UC9
+aspirante --> UC10
+aspirante --> UC12
+
+UC2 ..> UC11 : <<extend>>
+UC3 ..> UC11 : <<extend>>
+UC4 ..> UC11 : <<extend>>
+
+UC7 --> correo
+
+note right of UC1
+  Caso de uso principal
+  donde el aspirante llena
+  todos sus datos
+end note
+
+note right of UC11
+  Se activa cuando hay
+  errores de validación
+end note
+
+@enduml
