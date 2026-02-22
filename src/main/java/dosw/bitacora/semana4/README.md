@@ -5,7 +5,7 @@
 ### Ejercicio: Formulario de Inscripcion - Escuela Colombiana de Ingenieria
 Descripcion: Hice el analisis completo de requerimientos para un formulario de inscripcion a carreras. Incluye todo lo que necesita el sistema: que datos pide, como funciona, que pasa si algo sale mal, y las reglas que debe seguir.
 
-Archivos: Ver carpeta `ejercicio-inscripcion/`
+Archivos: Ver carpeta ejercicio-inscripcion/
 
 Que incluye:
 - Descripcion del requerimiento
