@@ -10,17 +10,26 @@ Este es el proyecto de gestion creado en Jira para la semana 5:
 
 ## Descripcion
 
-Proyecto de gestion y seguimiento de tareas utilizando Jira Software.
+Proyecto de gestion y seguimiento de tareas utilizando Jira Software. Aprendi a crear tableros, gestionar sprints, asignar tareas y hacer seguimiento del progreso del equipo.
 
 ---
 
 ## Autoevaluacion Semanal
 
 ### Que entendia mal antes?
-- [Escribe aqui tus conceptos erroneos previos]
+- Pensaba que Jira era solo para equipos grandes
+- Creia que era muy complicado de usar
+- No sabia que podia organizar mis propias tareas ahi
 
 ### Que entiendo ahora?
-- [Escribe aqui lo que has comprendido esta semana]
+- Jira es super util para organizar cualquier proyecto
+- Los tableros Kanban ayudan a visualizar el trabajo
+- Puedes crear historias de usuario, tareas y bugs
+- Los sprints te ayudan a planificar mejor el tiempo
+- Es facil hacer seguimiento de lo que falta por hacer
 
 ### Que me falta reforzar?
-- [Escribe aqui los temas que necesitas practicar mas]
+- Usar mejor los filtros y busquedas avanzadas
+- Configurar automatizaciones
+- Crear reportes y graficos
+- Integrar Jira con otras herramientas
