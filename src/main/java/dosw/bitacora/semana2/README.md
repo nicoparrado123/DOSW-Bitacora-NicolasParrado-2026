@@ -1,66 +1,66 @@
-# Semana 2 - SOLID y Patrones de Diseño
+# Semana 2 - SOLID y Patrones de Diseno
 
 ## Ejercicios realizados
 
 ### SOLID
 
 #### Ejercicio 1: Calculadora con SOLID
-**Descripción:** Implementé una calculadora que aplica los principios SOLID. Cada operación (suma, resta, multiplicación, división) está en su propia clase y todas implementan la interfaz Operacion. Así puedo agregar nuevas operaciones sin modificar la calculadora.
+Descripcion: Hice una calculadora que aplica los principios SOLID. Cada operacion como suma, resta, multiplicacion y division esta en su propia clase y todas implementan la interfaz Operacion. Asi puedo agregar nuevas operaciones sin tocar la calculadora.
 
-**Código:** Ver `solid/reto4/`
+Codigo: Ver solid reto4
 
-**Aprendizajes:**
-- Cada clase debe tener una sola responsabilidad
-- Las interfaces permiten extender funcionalidad sin modificar código existente
-- El polimorfismo hace el código más flexible y mantenible
+Aprendizajes:
+- Cada clase debe tener una sola responsabiliad
+- Las interfaces permiten extender funcionalidad sin modificar codigo existente
+- El polimorfismo hace el codigo mas flexible y mantenible
 
 ---
 
-### Patrones de Diseño
+### Patrones de Diseno
 
-#### Reto 1: Factory Method (Notificaciones)
-**Descripción:** Sistema de notificaciones que puede enviar mensajes por email, SMS o push. Usé Factory Method para crear las notificaciones sin que el código principal dependa de las clases concretas.
+#### Reto 1: Factory Method
+Descripcion: Sistema de notificaciones que puede enviar mensajes por email, SMS o push. Use Factory Method para crear las notificaciones sin que el codigo principal dependa de las clases concretas.
 
-**Código:** Ver `patrones/reto1/`
+Codigo: Ver patrones reto1
 
-**Aprendizajes:**
-- El Factory encapsula la creación de objetos
-- El código cliente no necesita saber qué clase concreta está usando
+Aprendizajes:
+- El Factory encapsula la creacion de objetos
+- El codigo cliente no necesita saber que clase concreta esta usando
 - Facilita agregar nuevos tipos de notificaciones
 
-#### Reto 2: Adapter (Impresoras)
-**Descripción:** Tenía dos impresoras que funcionan diferente (una simple y una detallada). Usé Adapter para que ambas se puedan usar de la misma forma sin modificar las clases originales.
+#### Reto 2: Adapter
+Descripcion: Tenia dos impresoras que funcionan diferente, una simple y una detallada. Use Adapter para que ambas se puedan usar de la misma forma sin modificar las clases originales.
 
-**Código:** Ver `patrones/reto2/`
+Codigo: Ver patrones reto2
 
-**Aprendizajes:**
+Aprendizajes:
 - El Adapter permite que clases incompatibles trabajen juntas
-- No necesitas modificar código existente para adaptarlo
-- Útil cuando trabajas con código legacy o librerías externas
+- No necesitas modificar codigo existente para adaptarlo
+- Util cuando trabajas con codigo legacy o librerias externas
 
-#### Reto 3: Memento (Editor de texto)
-**Descripción:** Editor que puede guardar estados del texto y restaurarlos (deshacer cambios). El Memento guarda el estado sin exponer los detalles internos del editor.
+#### Reto 3: Memento
+Descripcion: Editor que puede guardar estados del texto y restaurarlos para deshacer cambios. El Memento guarda el estado sin exponer los detalles internos del editor.
 
-**Código:** Ver `patrones/reto3/`
+Codigo: Ver patrones reto3
 
-**Aprendizajes:**
+Aprendizajes:
 - Memento permite guardar y restaurar estados de objetos
 - Mantiene el encapsulamiento del objeto original
-- Útil para implementar funcionalidades de undo/redo
+- Util para implementar funcionalidades de deshacer
 
 ---
 
-## Autoevaluación Semanal
+## Autoevaluacion Semanal
 
-### ¿Qué entendía mal antes?
-- Pensaba que los patrones de diseño eran complicados y solo para proyectos grandes
-- Creía que SOLID era solo teoría sin aplicación práctica
+### Que entendia mal antes?
+- Pensaba que los patrones de diseno eran complicados y solo para proyectos grandes
+- Creia que SOLID era solo teoria sin aplicacion practica
 
-### ¿Qué entiendo ahora?
-- Los patrones de diseño son soluciones simples a problemas comunes
-- SOLID hace que el código sea más fácil de mantener y extender
-- Separar responsabilidades y usar interfaces hace el código más flexible
+### Que entiendo ahora?
+- Los patrones de diseno son soluciones simples a problemas comunes
+- SOLID hace que el codigo sea mas facil de mantener y extender
+- Separar responsabilidades y usar interfaces hace el codigo mas flexible
 
-### ¿Qué me falta reforzar?
-- Practicar más identificando cuándo usar cada patrón en situaciones reales
+### Que me falta reforzar?
+- Practicar mas identificando cuando usar cada patron en situaciones reales
 - Aplicar todos los principios SOLID juntos en un mismo proyecto
