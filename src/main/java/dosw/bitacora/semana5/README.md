@@ -7,6 +7,15 @@ Este es el proyecto de gestion creado en Jira para la semana 5:
 **Link del proyecto:** [Ver proyecto en Jira](https://juanestebanhernandezmoreno1.atlassian.net/jira/software/projects/DP/boards/36?jql=&atlOrigin=eyJpIjoiZGE5ZDYyNGUyZTQ3NDJiYjg3ZjFjZTlmMDJmZmYwNGUiLCJwIjoiaiJ9)
 
 ---
+## imagenes
+<img width="1919" height="859" alt="image" src="https://github.com/user-attachments/assets/843a4d94-470e-4adc-add2-500e6ccb9525" />
+<img width="1919" height="853" alt="image" src="https://github.com/user-attachments/assets/b1db5132-199c-4d7e-9757-9eff2a1791d8" />
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/85b1572c-9afc-4291-878d-4a1eb175bfd4" />
+
+
+
+
+---
 
 ## Descripcion
 
