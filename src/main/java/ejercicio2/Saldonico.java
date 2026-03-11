@@ -1,7 +1,6 @@
 package ejercicio2;
 
-// Concrete Handler - Valida saldo
-public class ValidadorSaldo extends ValidadorPago {
+public class Saldonico extends Validonico {
     @Override
     public boolean validar(double monto, String cuenta) {
         System.out.println("Validando saldo para monto: $" + monto);

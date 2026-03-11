@@ -1,7 +1,6 @@
 package ejercicio2;
 
-// Concrete Handler - Valida límite de transacciones
-public class ValidadorLimite extends ValidadorPago {
+public class Limitnico extends Validonico {
     @Override
     public boolean validar(double monto, String cuenta) {
         System.out.println("Validando límite de transacción");

@@ -1,19 +1,18 @@
 package ejercicio2;
 
-// Facade - Simplifica el uso del sistema de pagos
-public class SistemaPagos {
-    private ValidadorPago cadenaValidacion;
-    private ProcesadorPago procesador;
+public class Sistemico {
+    private Validonico cadenaValidacion;
+    private Procesadornico procesador;
 
-    public SistemaPagos(ProcesadorPago procesador) {
+    public Sistemico(Procesadornico procesador) {
         this.procesador = procesador;
         configurarValidaciones();
     }
 
     private void configurarValidaciones() {
-        ValidadorSaldo validadorSaldo = new ValidadorSaldo();
-        ValidadorFraude validadorFraude = new ValidadorFraude();
-        ValidadorLimite validadorLimite = new ValidadorLimite();
+        Saldonico validadorSaldo = new Saldonico();
+        Fraudenico validadorFraude = new Fraudenico();
+        Limitnico validadorLimite = new Limitnico();
 
         validadorSaldo.setSiguiente(validadorFraude);
         validadorFraude.setSiguiente(validadorLimite);

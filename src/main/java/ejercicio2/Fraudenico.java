@@ -1,7 +1,6 @@
 package ejercicio2;
 
-// Concrete Handler - Valida fraude
-public class ValidadorFraude extends ValidadorPago {
+public class Fraudenico extends Validonico {
     @Override
     public boolean validar(double monto, String cuenta) {
         System.out.println("Validando fraude para cuenta: " + cuenta);

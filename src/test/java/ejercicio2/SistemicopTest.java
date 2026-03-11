@@ -6,7 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
-class SistemaPagosTest {
+class SistemicopTest {
     private ByteArrayOutputStream outputStream;
 
     @BeforeEach
@@ -17,7 +17,7 @@ class SistemaPagosTest {
 
     @Test
     void testPagoExitosoConPayPal() {
-        SistemaPagos sistema = new SistemaPagos(new PayPalAdapter());
+        Sistemico sistema = new Sistemico(new PayPalAdapternico());
         boolean resultado = sistema.procesarPago(100, "user@paypal.com");
         assertTrue(resultado);
         assertTrue(outputStream.toString().contains("PayPal"));
@@ -25,7 +25,7 @@ class SistemaPagosTest {
 
     @Test
     void testPagoExitosoConStripe() {
-        SistemaPagos sistema = new SistemaPagos(new StripeAdapter());
+        Sistemico sistema = new Sistemico(new StripeAdapternico());
         boolean resultado = sistema.procesarPago(200, "tok_visa");
         assertTrue(resultado);
         assertTrue(outputStream.toString().contains("Stripe"));
@@ -33,7 +33,7 @@ class SistemaPagosTest {
 
     @Test
     void testValidacionSaldoInsuficiente() {
-        SistemaPagos sistema = new SistemaPagos(new PayPalAdapter());
+        Sistemico sistema = new Sistemico(new PayPalAdapternico());
         boolean resultado = sistema.procesarPago(15000, "user@test.com");
         assertFalse(resultado);
         assertTrue(outputStream.toString().contains("Saldo insuficiente"));
@@ -41,7 +41,7 @@ class SistemaPagosTest {
 
     @Test
     void testValidacionFraude() {
-        SistemaPagos sistema = new SistemaPagos(new StripeAdapter());
+        Sistemico sistema = new Sistemico(new StripeAdapternico());
         boolean resultado = sistema.procesarPago(100, "fraud@test.com");
         assertFalse(resultado);
         assertTrue(outputStream.toString().contains("sospechosa"));
@@ -49,7 +49,7 @@ class SistemaPagosTest {
 
     @Test
     void testValidacionLimiteExcedido() {
-        SistemaPagos sistema = new SistemaPagos(new PayPalAdapter());
+        Sistemico sistema = new Sistemico(new PayPalAdapternico());
         boolean resultado = sistema.procesarPago(6000, "user@test.com");
         assertFalse(resultado);
         assertTrue(outputStream.toString().contains("límite"));
@@ -57,7 +57,7 @@ class SistemaPagosTest {
 
     @Test
     void testCadenaValidacionCompleta() {
-        SistemaPagos sistema = new SistemaPagos(new StripeAdapter());
+        Sistemico sistema = new Sistemico(new StripeAdapternico());
         boolean resultado = sistema.procesarPago(500, "valid@test.com");
         assertTrue(resultado);
         String output = outputStream.toString();
@@ -68,7 +68,7 @@ class SistemaPagosTest {
 
     @Test
     void testAdapterPayPal() {
-        PayPalAdapter adapter = new PayPalAdapter();
+        PayPalAdapternico adapter = new PayPalAdapternico();
         boolean resultado = adapter.procesarPago(100, "test@paypal.com");
         assertTrue(resultado);
         assertTrue(outputStream.toString().contains("PayPal"));
@@ -76,7 +76,7 @@ class SistemaPagosTest {
 
     @Test
     void testAdapterStripe() {
-        StripeAdapter adapter = new StripeAdapter();
+        StripeAdapternico adapter = new StripeAdapternico();
         boolean resultado = adapter.procesarPago(200, "tok_test");
         assertTrue(resultado);
         assertTrue(outputStream.toString().contains("Stripe"));

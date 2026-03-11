@@ -1,63 +1,75 @@
-# Refuerzo - Combinación de Patrones de Diseño
+# Refuerzo de Patrones de Diseño - Nico
+
+Bueno, acá está el refuerzo de patrones de diseño. La idea era combinar varios patrones en un mismo sistema para ver cómo trabajan juntos y resolver problemas reales.
 
 ## Ejercicio 1: Sistema de Notificaciones
 
-### Patrones Utilizados
+Imaginate que tenés una app que necesita mandar notificaciones a los usuarios. Pero no siempre querés mandarlas de la misma forma, a veces por email, a veces por SMS, a veces por push. Y además, no querés tener mil instancias del servicio de notificaciones dando vueltas por todos lados.
 
-#### 1. Strategy (Estrategia)
-- **Tipo**: Patrón de Comportamiento
-- **Justificación**: Permite cambiar dinámicamente el tipo de notificación (Email, SMS, Push) sin modificar el código del servicio. Cada canal de notificación es una estrategia diferente que implementa la misma interfaz.
+### ¿Qué patrones usé?
 
-#### 2. Singleton
-- **Tipo**: Patrón Creacional
-- **Justificación**: Garantiza que solo exista una instancia del ServicioNotificaciones en todo el sistema, evitando múltiples instancias y centralizando el envío de notificaciones.
+**Singleton** - Básicamente hice que el Servicionico sea único en todo el sistema. No importa cuántas veces lo llames, siempre te va a dar la misma instancia. Así evitás tener servicios duplicados y todo queda centralizado.
 
-### Cómo funciona
-- El ServicioNotificaciones es único (Singleton)
-- Puedes cambiar el canal de notificación en cualquier momento (Strategy)
-- Agregar nuevos canales solo requiere crear una nueva clase que implemente Notificacion
+**Strategy** - Acá está lo copado. Podés cambiar el tipo de notificación cuando quieras sin tocar el código del servicio. Tenés Emailnico, SMSnico y Pushnico, y cada uno sabe cómo enviar su tipo de notificación. Si mañana querés agregar notificaciones por Telegram, solo creás una clase nueva y listo.
+
+### Las clases
+
+- `Notificonico` - La interfaz que define cómo se envía una notificación
+- `Emailnico`, `SMSnico`, `Pushnico` - Las diferentes formas de notificar
+- `Servicionico` - El servicio único que coordina todo
+- `ServicionicoTest` - Las pruebas para verificar que todo funciona
 
 ---
 
 ## Ejercicio 2: Sistema de Procesamiento de Pagos
 
-### Patrones Utilizados
+Este es más complejo. Tenés una tienda online que acepta pagos por PayPal, Stripe, tarjeta de crédito, lo que sea. El tema es que cada proveedor tiene su propia forma de hacer las cosas, sus propios métodos y todo. Y encima, antes de procesar cualquier pago, tenés que validar un montón de cosas: que haya saldo, que no sea fraude, que no se pase del límite, etc.
 
-#### 1. Adapter (Adaptador)
-- **Tipo**: Patrón Estructural
-- **Justificación**: Cada proveedor de pago (PayPal, Stripe) tiene su propia API con métodos diferentes. El Adapter convierte estas APIs externas a una interfaz común (ProcesadorPago) que nuestro sistema entiende.
+### ¿Qué patrones usé?
 
-#### 2. Chain of Responsibility (Cadena de Responsabilidad)
-- **Tipo**: Patrón de Comportamiento
-- **Justificación**: Las validaciones (saldo, fraude, límite) se ejecutan en cadena. Cada validador decide si el proceso continúa o se detiene. Puedes agregar o quitar validaciones fácilmente sin afectar el resto del código.
+**Adapter** - Cada proveedor de pago habla su propio idioma. PayPal tiene un método `enviarPago()`, Stripe tiene `charge()`, y así. Los adapters (PayPalAdapternico y StripeAdapternico) traducen todo eso a una interfaz común que nuestro sistema entiende. Es como un traductor universal.
 
-#### 3. Facade (Fachada)
-- **Tipo**: Patrón Estructural
-- **Justificación**: SistemaPagos simplifica el uso del sistema completo. El usuario solo llama a procesarPago() y el sistema internamente coordina las validaciones y el procesamiento.
+**Chain of Responsibility** - Las validaciones se ejecutan en cadena, una tras otra. Primero valida el saldo (Saldonico), después el fraude (Fraudenico), y por último el límite (Limitnico). Si alguna falla, se corta todo y no se procesa el pago. Si todas pasan, seguís adelante. Lo bueno es que podés agregar o sacar validaciones fácilmente sin romper nada.
 
-### Cómo funciona
-- Los Adapters traducen las APIs externas a nuestra interfaz
-- La cadena de validadores verifica el pago paso a paso
-- El Facade (SistemaPagos) coordina todo el proceso de forma simple
+**Facade** - El Sistemico es como la cara visible de todo esto. Vos solo llamás a `procesarPago()` y él se encarga de coordinar las validaciones y el procesamiento. No tenés que saber cómo funciona todo por dentro, solo usás el sistema y listo.
+
+### Las clases
+
+- `Procesadornico` - La interfaz común para todos los procesadores de pago
+- `PayPalnico`, `Stripenico` - Las APIs externas de cada proveedor
+- `PayPalAdapternico`, `StripeAdapternico` - Los adaptadores que traducen las APIs
+- `Validonico` - La clase base para las validaciones en cadena
+- `Saldonico`, `Fraudenico`, `Limitnico` - Las validaciones concretas
+- `Sistemico` - El que coordina todo
+- `SistemicopTest` - Las pruebas del sistema
 
 ---
 
-## Ejecutar las Pruebas
+## Cómo ejecutar todo
 
+Para correr las pruebas:
 ```bash
 mvn clean test
 ```
 
-## Generar Reporte de Cobertura con Jacoco
-
+Para ver la cobertura de código con Jacoco:
 ```bash
 mvn clean test jacoco:report
 ```
 
-El reporte se genera en: `target/site/jacoco/index.html`
+El reporte te queda en `target/site/jacoco/index.html` y ahí podés ver qué porcentaje del código está cubierto por las pruebas.
 
-## Análisis Estático con SonarQube
-
+Si querés hacer análisis estático con SonarQube:
 ```bash
 mvn clean verify sonar:sonar
 ```
+
+---
+
+## Resumen
+
+En el primer ejercicio combiné Singleton con Strategy para tener un servicio único que puede cambiar su comportamiento según el canal de notificación que elijas.
+
+En el segundo ejercicio metí Adapter para integrar diferentes proveedores de pago, Chain of Responsibility para las validaciones, y Facade para simplificar el uso de todo el sistema.
+
+La idea es que todo sea extensible. Si mañana querés agregar un nuevo tipo de notificación o un nuevo proveedor de pago, solo creás las clases nuevas sin tocar lo que ya está funcionando. Eso es lo copado de usar patrones de diseño bien aplicados.
