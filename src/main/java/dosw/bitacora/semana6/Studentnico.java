@@ -2,11 +2,10 @@ package dosw.bitacora.semana6;
 
 import java.util.List;
 
-// clase que representa un estudiante con sus datos basicos
 public class Studentnico {
     private String id;
     private String name;
-    private String team; // naranja, azul, verde
+    private String team;
     private List<Gradenico> grades;
 
     public Studentnico(String id, String name, String team, List<Gradenico> grades) {

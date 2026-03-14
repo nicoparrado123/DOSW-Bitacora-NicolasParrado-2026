@@ -2,9 +2,8 @@ package dosw.bitacora.semana6;
 
 import java.time.LocalDate;
 
-// clase que representa una nota de una materia
 public class Gradenico {
-    private String subject; // dosw, bd, redes
+    private String subject;
     private double score;
     private LocalDate date;
     private boolean passed;
