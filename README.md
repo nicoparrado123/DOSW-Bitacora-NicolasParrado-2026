@@ -6,7 +6,7 @@ Bueno, acá está el refuerzo de patrones de diseño. La idea era combinar vario
 
 Imaginate que tenés una app que necesita mandar notificaciones a los usuarios. Pero no siempre querés mandarlas de la misma forma, a veces por email, a veces por SMS, a veces por push. Y además, no querés tener mil instancias del servicio de notificaciones dando vueltas por todos lados.
 
-### ¿Qué patrones usé?
+### Qué patrones use?
 
 **Singleton** - Básicamente hice que el Servicionico sea único en todo el sistema. No importa cuántas veces lo llames, siempre te va a dar la misma instancia. Así evitás tener servicios duplicados y todo queda centralizado.
 
@@ -25,7 +25,7 @@ Imaginate que tenés una app que necesita mandar notificaciones a los usuarios. 
 
 Este es más complejo. Tenés una tienda online que acepta pagos por PayPal, Stripe, tarjeta de crédito, lo que sea. El tema es que cada proveedor tiene su propia forma de hacer las cosas, sus propios métodos y todo. Y encima, antes de procesar cualquier pago, tenés que validar un montón de cosas: que haya saldo, que no sea fraude, que no se pase del límite, etc.
 
-### ¿Qué patrones usé?
+### Qué patrones use?
 
 **Adapter** - Cada proveedor de pago habla su propio idioma. PayPal tiene un método `enviarPago()`, Stripe tiene `charge()`, y así. Los adapters (PayPalAdapternico y StripeAdapternico) traducen todo eso a una interfaz común que nuestro sistema entiende. Es como un traductor universal.
 
@@ -43,33 +43,4 @@ Este es más complejo. Tenés una tienda online que acepta pagos por PayPal, Str
 - `Sistemico` - El que coordina todo
 - `SistemicopTest` - Las pruebas del sistema
 
----
 
-## Cómo ejecutar todo
-
-Para correr las pruebas:
-```bash
-mvn clean test
-```
-
-Para ver la cobertura de código con Jacoco:
-```bash
-mvn clean test jacoco:report
-```
-
-El reporte te queda en `target/site/jacoco/index.html` y ahí podés ver qué porcentaje del código está cubierto por las pruebas.
-
-Si querés hacer análisis estático con SonarQube:
-```bash
-mvn clean verify sonar:sonar
-```
-
----
-
-## Resumen
-
-En el primer ejercicio combiné Singleton con Strategy para tener un servicio único que puede cambiar su comportamiento según el canal de notificación que elijas.
-
-En el segundo ejercicio metí Adapter para integrar diferentes proveedores de pago, Chain of Responsibility para las validaciones, y Facade para simplificar el uso de todo el sistema.
-
-La idea es que todo sea extensible. Si mañana querés agregar un nuevo tipo de notificación o un nuevo proveedor de pago, solo creás las clases nuevas sin tocar lo que ya está funcionando. Eso es lo copado de usar patrones de diseño bien aplicados.
