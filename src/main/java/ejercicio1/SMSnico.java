@@ -1,8 +1,10 @@
 package ejercicio1;
 
+// clase para enviar notificaciones por mensaje de texto
 public class SMSnico implements Notificonico {
     @Override
     public void enviar(String mensaje, String destinatario) {
-        System.out.println("Enviando SMS a " + destinatario + ": " + mensaje);
+        // simula el envio de un sms
+        System.out.println("enviando sms a " + destinatario + ": " + mensaje);
     }
 }

@@ -1,8 +1,10 @@
 package ejercicio1;
 
+// clase para enviar notificaciones por correo
 public class Emailnico implements Notificonico {
     @Override
     public void enviar(String mensaje, String destinatario) {
-        System.out.println("Enviando Email a " + destinatario + ": " + mensaje);
+        // simula el envio de un email
+        System.out.println("enviando email a " + destinatario + ": " + mensaje);
     }
 }
