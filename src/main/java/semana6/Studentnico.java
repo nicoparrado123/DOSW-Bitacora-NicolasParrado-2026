@@ -1,4 +1,4 @@
-package dosw.bitacora.semana6;
+package semana6;
 
 import java.util.List;
 
