@@ -73,3 +73,13 @@ En el primer ejercicio combiné Singleton con Strategy para tener un servicio ú
 En el segundo ejercicio metí Adapter para integrar diferentes proveedores de pago, Chain of Responsibility para las validaciones, y Facade para simplificar el uso de todo el sistema.
 
 La idea es que todo sea extensible. Si mañana querés agregar un nuevo tipo de notificación o un nuevo proveedor de pago, solo creás las clases nuevas sin tocar lo que ya está funcionando. Eso es lo copado de usar patrones de diseño bien aplicados.
+
+---
+
+## Diagramas
+
+### Diagrama 1 - Sistema de Notificaciones
+![Diagrama 1](imagenes/diagrama1.png)
+
+### Diagrama 2 - Sistema de Procesamiento de Pagos
+![Diagrama 2](imagenes/diagrama2.png)
