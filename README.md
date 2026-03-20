@@ -4,8 +4,6 @@ Bueno, aca esta el refuerzo de patrones de diseno. La idea era combinar varios p
 
 ## Ejercicio 1: Sistema de Notificaciones
 
-Imaginate una app que tiene que mandar notificaciones a los usuarios. Pero no siempre queres mandarlas de la misma forma. A veces por email, otras por SMS y otras por push. Ademas, tampoco queres tener un monton de instancias del servicio de notificaciones creadas por todo el sistema.
-
 ### Que patrones use?
 
 **Singleton**  
@@ -24,8 +22,6 @@ Este patron permite cambiar la forma de enviar la notificacion sin tener que mod
 ---
 
 ## Ejercicio 2: Sistema de Procesamiento de Pagos
-
-Este caso es un poco mas complejo. Imagina una tienda online que acepta pagos por diferentes medios como PayPal, Stripe o tarjeta de credito. El problema es que cada proveedor maneja su propia API y sus propios metodos. Y ademas, antes de procesar cualquier pago, hay que validar varias cosas: que haya saldo, que no haya fraude y que no se pase el limite permitido.
 
 ### Que patrones use?
 
