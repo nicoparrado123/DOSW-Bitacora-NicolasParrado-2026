@@ -1,5 +1,9 @@
 # Semana 6
 
+## Tablero Jira
+
+https://mail-team-w4y4k0y5.atlassian.net/jira/software/projects/NICO123/boards/167/timeline?selectedIssue=NICO123-2&atlOrigin=eyJpIjoiNGFkZjBlNjdlNjU2NGYzZThhMDdlZjJhNmM2M2YwOWQiLCJwIjoiaiJ9
+
 ## Ejercicio - Sistema de notas equipo naranja
 
 El ejercicio consiste en un programa que maneja las notas de un grupo de estudiantes divididos por equipos.
