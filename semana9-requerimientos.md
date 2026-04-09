@@ -140,53 +140,40 @@
 
 ### Dependencias
 
-```
-RF01 (Registro) 
-  └─> RF02 (Login)
-       └─> RF03 (Ver coleccion)
-       └─> RF07 (Seleccionar criaturas)
+Hay requerimientos que no se pueden hacer sin antes tener otros listos. Aca los mas importantes:
 
-RF04 (Obtener criaturas)
-  └─> RF03 (Ver coleccion)
-  └─> RF05 (Mejorar criaturas)
+- Para hacer login (RF02) primero tiene que existir el registro (RF01)
+- Para ver la coleccion (RF03) o seleccionar criaturas (RF07) el usuario tiene que estar logueado (RF02)
+- Para mejorar criaturas (RF05) primero tiene que poder obtenerlas (RF04)
+- Para ejecutar un combate (RF09) primero hay que seleccionar criaturas (RF07) y buscar un oponente (RF08)
+- Una vez termina el combate (RF09) recien se puede calcular quien gano (RF10), dar recompensas (RF11) y guardar el historial (RF12)
 
-RF05 (Mejorar criaturas)
-  └─> RF06 (Calcular mejoras)
+### Bloqueos
 
-RF07 (Seleccionar criaturas)
-  └─> RF08 (Matchmaking)
-       └─> RF09 (Ejecutar combate)
-            └─> RF10 (Calcular resultado)
-                 └─> RF11 (Dar recompensas)
-                 └─> RF12 (Guardar historial)
-```
+**No se sabe como funcionan los combates**
+- Afecta RF09, RF10, RF14
+- Si el cliente no define las reglas del combate no se puede programar nada de eso
+- Lo que se puede hacer: acordar unas reglas basicas con el cliente antes de empezar
 
-### Bloqueos potenciales
+**No se sabe como balancear las criaturas**
+- Afecta RF04, RF05, RF08
+- Si una criatura es mucho mas fuerte que las demas el juego no tiene gracia
+- Lo que se puede hacer: empezar con pocas criaturas y ajustar el balance poco a poco
 
-**Falta definicion de reglas de combate**
-- Bloquea: RF09, RF10, RF14
-- Sin reglas claras no se puede programar la logica
-- Solucion: definir reglas basicas en reunion con cliente
+**No esta claro como emparejar jugadores**
+- Afecta RF08
+- Si un jugador nuevo pelea contra uno muy experimentado siempre va a perder y deja de jugar
+- Lo que se puede hacer: al inicio emparejar por nivel de usuario, algo simple
 
-**Sistema de balance no definido**
-- Bloquea: RF04, RF05, RF08
-- Si no hay balance el juego no funciona bien
-- Solucion: empezar con pocas criaturas y balancear de a poco
+**No hay donde guardar la informacion todavia**
+- Afecta RF12, RNF04
+- Si no se define donde y como se guarda la informacion, todo se pierde cuando se cierra la app
+- Lo que se puede hacer: definir eso desde el principio antes de programar cualquier cosa
 
-**Como se emparejan los jugadores**
-- Bloquea: RF08
-- Si los emparejamientos son muy desiguales los usuarios se frustran
-- Solucion: usar un sistema simple basado en nivel al inicio
-
-**Infraestructura de base de datos**
-- Bloquea: RF12, RNF04
-- Sin BD no hay persistencia
-- Solucion: definir esquema desde el inicio
-
-**Mecanicas de progresion**
-- Bloquea: RF05, RF06, RF11
-- Progresion mal diseñada afecta retencion
-- Solucion: investigar juegos similares
+**No estan definidas las mecanicas de progresion**
+- Afecta RF05, RF06, RF11
+- Si no se sabe como avanzan los jugadores no se puede programar las mejoras ni las recompensas
+- Lo que se puede hacer: mirar como lo hacen juegos parecidos y proponer algo al cliente
 
 ## 5. Matriz de trazabilidad
 
