@@ -57,7 +57,7 @@
 - Es funcional porque es una accion del usuario en el sistema
 
 **RF08** - El sistema busca un oponente de nivel similar
-- Es funcional porque define el comportamiento del matchmaking
+- Es funcional porque define como el sistema elige con quien pelea el usuario
 
 **RF09** - El sistema ejecuta el combate aplicando reglas definidas
 - Es funcional porque es la mecanica principal del juego
@@ -91,16 +91,16 @@
 **RNF04** - El sistema hace respaldos diarios automaticos
 - Es no funcional porque es un requisito de confiabilidad
 
-**RNF05** - El sistema garantiza resultados reproducibles en combates
+**RNF05** - El sistema garantiza que el mismo combate siempre da el mismo resultado
 - Es no funcional porque define consistencia del sistema
 
-**RNF06** - El sistema tiene arquitectura modular
+**RNF06** - El sistema esta construido de forma que sea facil agregar cosas nuevas sin romper lo que ya funciona
 - Es no funcional porque define como esta construido
 
 **RNF07** - El sistema es responsive para moviles
 - Es no funcional porque define usabilidad
 
-**RNF08** - El sistema previene inyeccion SQL
+**RNF08** - El sistema valida las entradas del usuario para evitar ataques
 - Es no funcional porque es requisito de seguridad
 
 ## 3. Priorizacion
@@ -122,7 +122,7 @@
 
 - **RF05** (Mejorar criaturas) - importante para retencion pero puede venir despues
 - **RF06** (Calcular mejoras) - depende de RF05
-- **RF08** (Matchmaking) - importante pero puede ser basico al inicio
+- **RF08** (Buscar oponente) - importante pero puede ser basico al inicio
 - **RF11** (Dar recompensas) - motiva pero no bloquea funcionalidad
 - **RF13** (Ver estadisticas) - valor agregado
 - **RF14** (Validar reglas) - puede empezar simple
@@ -133,8 +133,8 @@
 
 ### Baja prioridad
 
-- **RNF06** (Arquitectura modular) - beneficio a largo plazo
-- **RNF08** (Prevenir ataques) - se refuerza con el tiempo
+- **RNF06** (Facil de extender) - beneficio a largo plazo
+- **RNF08** (Seguridad de entradas) - se refuerza con el tiempo
 
 ## 4. Dependencias y bloqueos
 
@@ -173,10 +173,10 @@ RF07 (Seleccionar criaturas)
 - Si no hay balance el juego no funciona bien
 - Solucion: empezar con pocas criaturas y balancear de a poco
 
-**Algoritmo de matchmaking**
+**Como se emparejan los jugadores**
 - Bloquea: RF08
-- Emparejamientos malos frustran usuarios
-- Solucion: usar sistema simple por nivel al inicio
+- Si los emparejamientos son muy desiguales los usuarios se frustran
+- Solucion: usar un sistema simple basado en nivel al inicio
 
 **Infraestructura de base de datos**
 - Bloquea: RF12, RNF04
@@ -197,9 +197,9 @@ RF07 (Seleccionar criaturas)
 | RF03 | Funcional | Alta | Coleccion | Listar criaturas del usuario | RF02 |
 | RF04 | Funcional | Alta | Coleccion | Obtener criatura y verificar | RF02 |
 | RF05 | Funcional | Media | Progresion | Mejorar y verificar recursos | RF04 |
-| RF06 | Funcional | Media | Progresion | Verificar stats aumentadas | RF05 |
+| RF06 | Funcional | Media | Progresion | Verificar que las caracteristicas de la criatura aumentaron | RF05 |
 | RF07 | Funcional | Alta | Combate | Seleccionar equipo valido | RF03 |
-| RF08 | Funcional | Media | Matchmaking | Verificar nivel similar | RF07 |
+| RF08 | Funcional | Media | Emparejamiento | Verificar que los oponentes tengan nivel parecido | RF07 |
 | RF09 | Funcional | Alta | Combate | Ejecutar y verificar reglas | RF08 |
 | RF10 | Funcional | Alta | Combate | Verificar ganador correcto | RF09 |
 | RF11 | Funcional | Media | Recompensas | Ganar y verificar premio | RF10 |
@@ -211,9 +211,9 @@ RF07 (Seleccionar criaturas)
 | RNF03 | No Funcional | Media | Compatibilidad | Probar en navegadores | - |
 | RNF04 | No Funcional | Media | Confiabilidad | Verificar backups | - |
 | RNF05 | No Funcional | Alta | Consistencia | Repetir combate 2 veces | RF10 |
-| RNF06 | No Funcional | Baja | Arquitectura | Revisar modulos | - |
+| RNF06 | No Funcional | Baja | Arquitectura | Verificar que se puede agregar contenido sin tocar lo existente | - |
 | RNF07 | No Funcional | Media | Usabilidad | Probar en movil | - |
-| RNF08 | No Funcional | Baja | Seguridad | Intentar SQL injection | - |
+| RNF08 | No Funcional | Baja | Seguridad | Intentar ingresar datos maliciosos y verificar que el sistema los rechaza | - |
 
 ## 6. Analisis de ambiguedades
 
@@ -241,13 +241,13 @@ RF07 (Seleccionar criaturas)
 - Las mejoras son permanentes?
 - Que recursos se necesitan?
 - Hay limite de mejora?
-- Afecta stats, habilidades o ambas?
+- Afecta las caracteristicas, habilidades o ambas?
 - Se puede resetear?
 - Hay evolucion de forma?
 
 **Impacto:** Define la progresion y retencion de usuarios
 
-**Supuesto temporal:** Las criaturas suben de nivel con experiencia de combates y aumentan sus stats
+**Supuesto temporal:** Las criaturas suben de nivel con experiencia de combates y mejoran sus caracteristicas
 
 ### Ambiguedad 3: Como funcionan los combates
 
@@ -268,32 +268,32 @@ RF07 (Seleccionar criaturas)
 
 ### Ambiguedad 4: Que es un emparejamiento justo
 
-**Problema:** No define los criterios de matchmaking
+**Problema:** No define como se decide que dos jugadores son de nivel parecido
 
 **Preguntas:**
-- Se basa en nivel de usuario o poder de criaturas?
-- Hay ligas o divisiones?
-- Que rango de diferencia es aceptable?
-- Que pasa si no hay rivales disponibles?
-- Se puede elegir rival o es automatico?
+- Se basa en el nivel del usuario o en el poder de sus criaturas?
+- Hay categorias o divisiones?
+- Que tan diferente puede ser el nivel entre dos jugadores?
+- Que pasa si no hay rivales disponibles en ese momento?
+- Se puede elegir rival o el sistema lo asigna solo?
 
-**Impacto:** Afecta la experiencia y retencion
+**Impacto:** Afecta la experiencia del jugador, si los emparejamientos son muy desiguales la gente deja de jugar
 
-**Supuesto temporal:** Sistema de rating tipo ELO, busca rivales con +-100 puntos
+**Supuesto temporal:** El sistema asigna rivales con nivel parecido, con un margen de diferencia razonable
 
 ### Ambiguedad 5: Consistencia en resultados
 
-**Problema:** No aclara si es determinismo o ausencia de bugs
+**Problema:** No queda claro si los combates deben ser completamente predecibles o solo sin errores
 
 **Preguntas:**
-- Los combates son 100% deterministas?
-- Puede haber elementos de azar?
+- El resultado del combate siempre es el mismo si las criaturas son iguales?
+- Puede haber algo de azar en el combate?
 - Como se maneja el empate?
-- Se guardan las semillas aleatorias?
+- Si hay azar, se guarda como fue para poder revisarlo despues?
 
-**Impacto:** Define arquitectura del sistema de combate
+**Impacto:** Cambia bastante como se programa el sistema de combate
 
-**Supuesto temporal:** Combates deterministas con seed aleatorio guardado para poder repetir
+**Supuesto temporal:** Los combates dan siempre el mismo resultado con las mismas criaturas, y si hay azar se guarda para poder repetirlo
 
 ## 7. Conclusiones
 
